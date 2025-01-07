@@ -122,13 +122,13 @@ const calculate = async (req, res) => {
             usdToIdr = req.body.usdToIdr;
           } else if (req.body && req.body.usdToSar) {
             usdToSar = req.body.usdToSar;
-            usdToIdr = idrRate !== null ? parseFloat(Math.floor(parseFloat(idrRate) * 1000).toFixed(3)) : setting[0].usdToIdr;
+            usdToIdr = idrRate !== null ? parseFloat(Math.floor(parseFloat(idrRate) * 1000).toFixed(3)) : setting[0].usdToRupiah;
           } else if (req.body && req.body.usdToIdr) {
             usdToSar = setting[0].usdToSar;
             usdToIdr = req.body.usdToIdr;
           } else {
             usdToSar = setting[0].usdToSar;
-            usdToIdr = idrRate !== null ? parseFloat(Math.floor(parseFloat(idrRate) * 1000).toFixed(3)) : setting[0].usdToIdr;
+            usdToIdr = idrRate !== null ? parseFloat(Math.floor(parseFloat(idrRate) * 1000).toFixed(3)) : setting[0].usdToRupiah;
           }
         } else {
           return res.status(404).json({
